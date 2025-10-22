@@ -1,0 +1,28 @@
+<button class="btn btn-dark d-lg-none m-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" style="background-color: var(--magenta-retro) !important;">
+    <span class="navbar-toggler-icon" style="filter: brightness(0) invert(1);"></span>
+</button>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar para Desktop -->
+        <nav id="sidebar" class="col-lg-2 col-md-3 d-none d-lg-block sidebar">
+            <app-sidebar></app-sidebar>
+        </nav>
+
+        <!-- Contenido Principal -->
+        <main class="col-lg-10 col-md-9 ms-sm-auto px-md-4 py-4">
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+</div>
+
+<!-- Sidebar para Móvil (Offcanvas) -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" style="background-color: var(--purpura-profundo);">
+    <div class="offcanvas-header border-bottom" style="border-color: rgba(255, 255, 255, 0.1) !important;">
+        <h5 class="offcanvas-title" style="color: var(--magenta-retro);">Menú Synthwave</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <app-sidebar></app-sidebar>
+    </div>
+</div>
