@@ -15,27 +15,45 @@ export const routes: Routes = [
       },
       {
         path: 'dashboard',
-        component: DashboardComponent
+        loadChildren: async () => {
+          const m = await import('./components/dashboard/dashboard.module');
+          return m.DashboardModule;
+        }
       },
       {
         path: 'eventos',
-        loadChildren: () => import('./components/eventos/eventos.module').then(m => m.EventosModule)
+        loadChildren: async () => {
+          const m = await import('./components/eventos/eventos.module');
+          return m.EventosModule;
+        }
       },
       {
         path: 'tickets',
-        loadChildren: () => import('./components/tickets/tickets.module').then(m => m.TicketsModule)
+        loadChildren: async () => {
+          const m = await import('./components/tickets/tickets.module');
+          return m.TicketsModule;
+        }
       },
       {
         path: 'artistas',
-        loadChildren: () => import('./components/artistas/artistas.module').then(m => m.ArtistasModule)
+        loadChildren: async () => {
+          const m = await import('./components/artistas/artistas.module');
+          return m.ArtistasModule;
+        }
       },
       {
         path: 'ajustes',
-        loadChildren: () => import('./components/ajustes/ajustes.module').then(m => m.AjustesModule)
+        loadChildren: async () => {
+          const m = await import('./components/ajustes/ajustes.module');
+          return m.AjustesModule;
+        }
       },
       {
         path: 'nuevo',
-        component: NuevoComponenteComponent
+        loadChildren: async () => {
+          const m = await import('./nuevo-componente/nuevo-componente.module');
+          return m.NuevoComponenteModule;
+        }
       }
     ]
   }
